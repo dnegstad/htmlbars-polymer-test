@@ -3,13 +3,21 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'htmlbars-test',
+    podModulePrefix: 'htmlbars-test/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'img-src': "'self' data:",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
+      'font-src': "'self' fonts.gstatic.com"
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+        'ember-htmlbars': true
       }
     },
 

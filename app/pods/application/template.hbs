@@ -1,0 +1,21 @@
+<h2 id='title'>Welcome to Ember.js</h2>
+
+{{model.name}} {{model.width}}
+
+{{input type="number" value=model.width}}
+{{input type="number" value=model.selected}}
+
+<paper-button {{action "switch"}} raised>
+  Switch!
+</paper-button>
+
+<core-animated-pages transitions="cross-fade" selected={{model.selected}}>
+  <section id="master">
+    <div style="background-color: #f00; width:{{model.width}}px; height:250px;" cross-fade></div>
+  </section>
+  <section id="secondary">
+    <div style="background-color: #f00; width:250px; height:{{model.width}}px;" cross-fade></div>
+  </section>
+</core-animated-pages>
+
+{{outlet}}
