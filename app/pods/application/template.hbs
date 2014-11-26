@@ -9,6 +9,10 @@
   Switch!
 </paper-button>
 
+<paper-button {{action "popup"}} raised>
+  Popup?
+</paper-button>
+
 <core-animated-pages transitions="cross-fade" selected={{model.selected}}>
   <section id="master">
     <div style="background-color: #f00; width:{{model.width}}px; height:250px;" cross-fade></div>
@@ -19,3 +23,8 @@
 </core-animated-pages>
 
 {{outlet}}
+
+<paper-dialog opened={{showDialog}} layered transition="paper-dialog-transition-bottom" heading="Super Awesome Dialog">
+  I'm a dialog
+  <paper-button affirmative autofocus style="color: #428bca;">Ok</paper-button>
+</paper-dialog>
